@@ -4,22 +4,22 @@ import { OrbitControls, Preload, useGLTF, useHelper } from '@react-three/drei';
 import CanvasLoader from '../Loader';
 
 const ParametricSphere = ({isMobile }) => {
-  const sphere = useGLTF('/parametric_surface/scene.gltf');
+  const sphere = useGLTF('/aeriusu_drone_ship/scene.gltf');
 
   return (
-    <mesh> 
+    <mesh rotation={[0, -Math.PI / 1, -Math.PI / 8]}> 
       <hemisphereLight intensity={0.35}
       groundColor='blue'/>
       <pointLight intensity={0.1} />
-      <spotLight position={[1000, 2000, -1000]} 
+      <spotLight position={[7,4,5]} 
       angle={0.15}
       penumbra={1}
       intensity={0.4}
       castShadow
       shadow-mapSise={1024}/>
       <primitive object={sphere.scene}
-      position={[150,100,0]}
-      scale={isMobile ? 0.75 : 1} />
+      position={[0,-3,0]}
+      scale={isMobile ? 0.45 : 0.5} />
     </mesh>
   );
 };
@@ -46,7 +46,7 @@ const ParametricSphereCanvas = () => {
     <Canvas
       frameloop='demand'
       shadows
-      camera={{position: [250,0,250], fov: 100}}
+      camera={{position: [4,8,5], fov: 100}}
       gl={{ preserveDrawingBuffer: true}}
     >
       <Suspense fallback={<CanvasLoader />}>
@@ -54,7 +54,7 @@ const ParametricSphereCanvas = () => {
         maxPolarAngle={Math.PI / 2}
         minPolarAngle={Math.PI / 2}
         autoRotate={true}
-        autoRotateSpeed={6}/>
+        autoRotateSpeed={2}/>
 
         <ParametricSphere isMobile={isMobile}/>
       </Suspense>
