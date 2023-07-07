@@ -113,7 +113,7 @@ const Contact = () => {
       </motion.div>
       </div>
 
-      <div className='xl:w-1/2 w-full'>
+      <div className='xl:w-1/2 w-full xl:flex flex-col-reverse'>
       <motion.div
       variants={slideIn('right', 'tween', 0.2, 1)}
       className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'>
