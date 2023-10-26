@@ -10,9 +10,11 @@ import { fadeIn, textVariant } from "../utils/motion";
 
 const ProjectCard = ({ index, name, description, 
 tags, image, source_code_link}) => {
+  // console.log("Froggy")
   return (
     <motion.div
-    variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+    viewport={{amount: "some"}}>
       <Tilt 
       options={{
         max: 45,
@@ -20,7 +22,7 @@ tags, image, source_code_link}) => {
         speed: 450
       }}
       className="bg-tertiary p-5 rounded-2xl
-      sm:w-[360px] w-full">
+      sm:max-w-[360px] md:max-w-[360px] w-full">
         <div className="relative w-full h-[230px]">
           <img src={image} alt={name}
           className="w-full h-full object-cover rounded-2xl"/>
@@ -55,17 +57,21 @@ tags, image, source_code_link}) => {
 }
 
 const Works = () => {
+  // console.log("Pippy");
   return (
-    <>
-      <motion.div variants={textVariant()}>
+    <div>
+      <div className="flex">
+      <motion.div variants={textVariant()} viewport={{amount: "some"}}>
         <h2 className={`${styles.sectionHeadText}`}>
           Projects
         </h2>
       </motion.div>
+      </div>
 
       <div className="w-full flex">
         <motion.p
         variants={fadeIn("", "", 0.1, 1)}
+        viewport={{amount: "some"}}
         className="mt-3 text-secondary text-[17px] max-w-3xl
         leading-[30px]">
           Following projects showcases my skills and experience through
@@ -85,7 +91,7 @@ const Works = () => {
         ))}
 
       </div>
-    </>
+    </div>
   )
 }
 
