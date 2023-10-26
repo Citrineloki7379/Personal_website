@@ -15,7 +15,7 @@ const Navbar = () => {
         <Link to='/' className='flex items-center gap-2' 
         onClick={() => 
           {setActive("");
-          window.screenTop(0, 0);
+          window.scrollTo(0, 0);
           }}>
             <img src={logo} alt='logo' className='w-24 h-12 object-contain' />
             <p className='text-white text-[24px] 
