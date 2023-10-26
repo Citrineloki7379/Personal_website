@@ -69,7 +69,8 @@ const Contact = () => {
       <div className='xl:w-1/2 w-full'>
       <motion.div
       variants={slideIn('left', 'tween', 0.2, 1)}
-      className='flex-[0.75] bg-black-100/75 p-8 rounded-2xl'>
+      className='flex-[0.75] bg-black-100/75 p-8 rounded-2xl'
+      viewport={{amount: "some"}}>
         <h3 className={styles.sectionHeadText}>Contact</h3>
         <form
         ref={formRef}
@@ -116,7 +117,8 @@ const Contact = () => {
       <div className='xl:w-1/2 w-full xl:flex flex-col-reverse'>
       <motion.div
       variants={slideIn('right', 'tween', 0.2, 1)}
-      className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'>
+      className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
+      viewport={{amount: "some"}}>
         <ShipCanvas />
       </motion.div>
       </div>
