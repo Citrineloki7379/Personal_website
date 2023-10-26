@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 
-import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
+import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, Education } from "./components";
 
 import { useEffect, useState, useRef } from 'react';
 import TOPOLOGY from 'vanta/src/vanta.topology'
@@ -109,6 +109,7 @@ const App = () => {
           </div>
           <Experience />
           {/* <Tech /> */}
+          <Education />
           <Works />
           {/* <Feedbacks /> */}
           <div className="relative z-5">
