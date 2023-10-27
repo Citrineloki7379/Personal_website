@@ -24,7 +24,7 @@ const About = () => {
         where I teach First-Year programming in lab sessions, and I am pursuing 
         a Software Engineering Internship for the summer of 2024.
         <br></br> <br></br>
-        Outside of Computer Science I am a Seargent in the Boys' Brigade, where I 
+        Outside of Computer Science I am a Sergeant in the Boys' Brigade, where I 
         actively engage and lead fun activities every Friday night for the boys in the Company. I also
         enjoy playing Badminton and online Strategy games like Civilization 6.
       </motion.p>

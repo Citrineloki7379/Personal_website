@@ -4,7 +4,9 @@ import {
     westhill,
     pwebsite,
     game2048,
-    dash
+    dash,
+    RPi,
+    Assembler
 } from '../assets'
 
 // Then define constants then export them.
@@ -88,7 +90,7 @@ const experiences = [
           color: "pink-text-gradient",
         },
       ],
-      image: pwebsite,
+      image: RPi,
       source_code_link: "https://github.com/",
     },
     {
@@ -109,7 +111,7 @@ const experiences = [
           color: "pink-text-gradient",
         },
       ],
-      image: pwebsite,
+      image: Assembler,
       source_code_link: "https://github.com/",
     },
     {

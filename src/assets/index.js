@@ -7,6 +7,8 @@ import github from './github.png';
 import pwebsite from './personal_website.png';
 import game2048 from './2048.png';
 import dash from './dash.png';
+import RPi from './RPi.jpeg';
+import Assembler from './assembler.png';
 
 export {
     logo,
@@ -17,5 +19,7 @@ export {
     github,
     pwebsite,
     game2048,
-    dash
+    dash,
+    RPi,
+    Assembler
 };
