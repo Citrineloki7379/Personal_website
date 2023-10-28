@@ -3,8 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, Education } from "./components";
 
 import { useEffect, useState, useRef } from 'react';
-import TOPOLOGY from 'vanta/src/vanta.topology'
-// import TOPOLOGY from 'vanta/dist/vanta.topology.min.js'
+import WAVES from 'vanta/dist/vanta.waves.min'
 const App = () => {
 
   const [vantaEffect, setVantaEffect] = useState(0);
@@ -43,59 +42,33 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    // console.log("Width " + dims.width);
-    // console.log("Height " + dims.height);
-    // console.log("Vanta Effect " + vantaEffect);
-
-    if(/*.height >= 250 && dims.width >= 250 && */!vantaEffect) {
-      setVantaEffect(
-        TOPOLOGY({
-          el: vantaRef.current,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          forceAnimate: true,
-          minHeight: 200.00,
-          minWidth: 200.00,
-          scale: 1.0,
-          scaleMobile: 1.0,
-          color: 0x8499e3,
-          backgroundColor: 0x1011b
-        }) 
-      );
-    }
+    setVantaEffect(
+      WAVES({
+        el: vantaRef.current,
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        forceAnimate: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        color: 0x90f20,
+        shininess: 20.00,
+        waveHeight: 15.50,
+        waveSpeed: 0.15,
+        zoom: 0.70
+      }) 
+    );
 
     return () => {
       if(vantaEffect) {
-        //vantaEffect.destroy();
+        vantaEffect.destroy();
         setVantaEffect(null);
 
       }
     }
-  }, [dims.height, dims.width]);
-
-  // useEffect(() => {
-  //   if (!vantaEffect) {
-  //     setVantaEffect(
-  //       TOPOLOGY({
-  //         el: vantaRef.current,
-  //         mouseControls: true,
-  //         touchControls: true,
-  //         gyroControls: false,
-  //         forceAnimate: true,
-  //         minHeight: 200.00,
-  //         minWidth: 200.00,
-  //         scale: 1.0,
-  //         scaleMobile: 1.0,
-  //         color: 0x8499e3,
-  //         backgroundColor: 0x1011b
-  //       }) 
-  //     );
-  //   }
-  //   return () => {
-  //     if (vantaEffect) vantaEffect.destroy();
-  //   };
-  // }, [vantaEffect]);
+  }, []);
 
   return (
     <div ref={vantaRef} className="bg z-0" id="vanta">

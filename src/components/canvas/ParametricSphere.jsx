@@ -4,7 +4,7 @@ import { OrbitControls, Preload, useGLTF, useHelper } from '@react-three/drei';
 import CanvasLoader from '../Loader';
 
 const ParametricSphere = ({isMobile }) => {
-  const sphere = useGLTF('/aeriusu_drone_ship/scene.gltf');
+  const sphere = useGLTF('/aeriusu_drone_ship/scene.glb');
 
   return (
     <mesh rotation={[0, -Math.PI / 1, -Math.PI / 8]}> 
@@ -48,7 +48,7 @@ const ParametricSphereCanvas = () => {
       frameloop='demand'
       shadows
       camera={{position: [4,8,5], fov: 100}}
-      gl={{ preserveDrawingBuffer: true}}
+      gl={{ preserveDrawingBuffer: false, powerPreference: "low-power", precision: "lowp"}}  
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false}

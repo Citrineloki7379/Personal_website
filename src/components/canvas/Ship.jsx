@@ -5,7 +5,7 @@ import CanvasLoader from '../Loader';
 
 const Ship = () => {
 
-  const ship = useGLTF('./ship_in_a_bottle/scene.gltf');
+  const ship = useGLTF('./ship_in_a_bottle/scene.glb');
   return (
     <mesh rotation={[Math.PI / 4, 0, 0]}>
       <hemisphereLight intensity={0.35}
@@ -32,7 +32,7 @@ const ShipCanvas = () => {
     <Canvas
     shadows
     frameloop='demand'
-    gl={{ preserveDrawingBuffer: true}}
+    gl={{ preserveDrawingBuffer: false, powerPreference: "low-power", precision: "lowp"}}
     camera={{fov: 90, near: 0.1, far: 200, position: [0,-2,3.5]}}>
 
       <Suspense fallback={<CanvasLoader />}>
