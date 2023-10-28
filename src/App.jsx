@@ -67,7 +67,7 @@ const App = () => {
 
     return () => {
       if(vantaEffect) {
-        vantaEffect.destroy();
+        //vantaEffect.destroy();
         setVantaEffect(null);
 
       }

@@ -16,7 +16,7 @@ const ParametricSphere = ({isMobile }) => {
       penumbra={1}
       intensity={0.4}
       castShadow
-      shadow-mapSise={1024}/>
+      shadow-mapSise={256}/>
       <primitive object={sphere.scene}
       position={[0,-3,0]}
       scale={isMobile ? 0.45 : 0.5} />
@@ -39,6 +39,7 @@ const ParametricSphereCanvas = () => {
 
     return () => {
       mediaQuery.removeEventListener("change", handleMediaQueryChange);
+      setIsMobile(false);
     };
   }, []);
 

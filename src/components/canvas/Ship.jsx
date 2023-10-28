@@ -16,7 +16,7 @@ const Ship = () => {
       penumbra={1}
       intensity={0.4}
       castShadow
-      shadow-mapSise={1024}/>
+      shadow-mapSise={256}/>
       <primitive 
     object={ship.scene}
     scale={1.45}
