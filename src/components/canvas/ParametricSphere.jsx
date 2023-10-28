@@ -1,6 +1,6 @@
 import { Suspense, useEffect, useState} from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Preload, useGLTF, useHelper, meshBounds, AdaptiveDpr } from '@react-three/drei';
+import { OrbitControls, Preload, useGLTF, useHelper, meshBounds, AdaptiveDpr, BakeShadows } from '@react-three/drei';
 import CanvasLoader from '../Loader';
 
 const ParametricSphere = ({isMobile }) => {
@@ -48,7 +48,7 @@ const ParametricSphereCanvas = () => {
       frameloop='demand'
       shadows
       camera={{position: [4,8,5], fov: 100}}
-      gl={{ preserveDrawingBuffer: false, powerPreference: "high-performance", precision: "lowp", antialias: false}}  
+      gl={{ preserveDrawingBuffer: false, powerPreference: "high-performance", precision: "lowp", antialias: false, pixelRatio: [1, 2]}}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false}
@@ -60,6 +60,7 @@ const ParametricSphereCanvas = () => {
         <ParametricSphere isMobile={isMobile}/>
       </Suspense>
       <AdaptiveDpr pixelated />
+      <BakeShadows />
       <Preload all />
     </Canvas>
   );
