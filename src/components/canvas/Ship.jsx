@@ -1,13 +1,13 @@
 import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
+import { OrbitControls, Preload, meshBounds, useGLTF, AdaptiveDpr } from '@react-three/drei';
 import CanvasLoader from '../Loader';
 
 const Ship = () => {
 
   const ship = useGLTF('./ship_in_a_bottle/scene.glb');
   return (
-    <mesh rotation={[Math.PI / 4, 0, 0]}>
+    <mesh rotation={[Math.PI / 4, 0, 0]} raycast={meshBounds}>
       <hemisphereLight intensity={0.35}
       groundColor='blue'/>
       <pointLight intensity={0.1} />
@@ -32,7 +32,7 @@ const ShipCanvas = () => {
     <Canvas
     shadows
     frameloop='demand'
-    gl={{ preserveDrawingBuffer: false, powerPreference: "low-power", precision: "lowp"}}
+    gl={{ preserveDrawingBuffer: false, powerPreference: "high-performance", precision: "lowp", antialias: false}}
     camera={{fov: 90, near: 0.1, far: 200, position: [0,-2,3.5]}}>
 
       <Suspense fallback={<CanvasLoader />}>
@@ -46,7 +46,8 @@ const ShipCanvas = () => {
 
         <Ship />
       </Suspense>
-
+    <AdaptiveDpr pixelated />  
+    <Preload all />
     </Canvas>
   )
 }
