@@ -4,6 +4,9 @@ import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, Stars
 
 import { useEffect, useState, useRef } from 'react';
 import WAVES from 'vanta/dist/vanta.waves.min'
+
+import { Analytics } from '@vercel/analytics/react';
+
 const App = () => {
 
   const [vantaEffect, setVantaEffect] = useState(0);
@@ -72,6 +75,7 @@ const App = () => {
 
   return (
     <div ref={vantaRef} className="bg z-0" id="vanta">
+    <Analytics />
     <BrowserRouter> 
         <div className="relative z-5">
           <Navbar />
